@@ -1,0 +1,39 @@
+name: Next.js CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+env:
+  NODE_VERSION: 20.x  # Recommended LTS version for Next.js
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linting (ESLint)
+      run: npm run lint
+
+    - name: Run type checking (if using TypeScript)
+      run: npm run type-check
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build application
+      run: npm run build
