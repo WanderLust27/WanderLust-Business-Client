@@ -9,7 +9,7 @@ import FAQSection from "./components/faq-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background relative overflow-hidden">
+    <main className="min-h-screen  bg-background relative overflow-hidden">
       {/* Grid background pattern */}
       <div className="absolute inset-0 bg-grid-pattern z-0"></div>
 
