@@ -1,77 +1,93 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
+import { ChevronDown } from "lucide-react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion"
 
 export default function FAQSection() {
   return (
-    <section className="w-full py-24 px-6 md:px-12 lg:px-24 border-t border-gray-200">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-blue-400">Fre</span>
-            <span className="text-purple-400">quently</span>
-            <br />
-            <span className="text-purple-500">Ask </span>
-            <span className="text-gray-900">Questions</span>
-          </h2>
-          <p className="text-gray-600">
-            At SwiftPay, we want to ensure that our platform meets all of your HR and payroll needs.
-          </p>
+    <section className="w-full py-24 px-6 md:px-12 lg:px-24">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-5xl font-bold leading-tight mb-4">
+              <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Fre</span>
+              <span className="text-[hsl(var(--foreground))]">quently</span>
+              <br />
+              <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Ask </span>
+              <span className="text-[hsl(var(--foreground))]">Questions</span>
+            </h2>
+            <p className="text-[hsl(var(--muted-foreground))] text-lg">
+              At SwiftPay, we want to ensure that our platform meets all your HR and.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="border rounded-2xl px-6 py-4 border-[hsl(var(--border))]">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-left font-medium">How does SwiftPay help automate payroll?</span>
+                    <ChevronDown className="h-5 w-5 text-[hsl(var(--muted-foreground))] transform transition-transform duration-200" />
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 text-[hsl(var(--muted-foreground))]">
+                  SwiftPay simplifies payroll processing by automating salary calculations, tax deductions, and direct deposits.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border rounded-2xl px-6 py-4 border-[hsl(var(--border))]">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-left font-medium">Can SwiftPay handle benefits management?</span>
+                    <ChevronDown className="h-5 w-5 text-[hsl(var(--muted-foreground))] transform transition-transform duration-200" />
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 text-[hsl(var(--muted-foreground))]">
+                  Yes, SwiftPay provides comprehensive benefits management solutions including health insurance, retirement plans, and more.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border rounded-2xl px-6 py-4 border-[hsl(var(--border))]">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-left font-medium">How does SwiftPay help automate payroll?</span>
+                    <ChevronDown className="h-5 w-5 text-[hsl(var(--muted-foreground))] transform transition-transform duration-200" />
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 text-[hsl(var(--muted-foreground))]">
+                  Our automated system handles all aspects of payroll processing, ensuring accuracy and compliance.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border rounded-2xl px-6 py-4 border-[hsl(var(--border))]">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-left font-medium">What customer support options are available?</span>
+                    <ChevronDown className="h-5 w-5 text-[hsl(var(--muted-foreground))] transform transition-transform duration-200" />
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 text-[hsl(var(--muted-foreground))]">
+                  We offer 24/7 customer support through multiple channels including phone, email, and live chat.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border rounded-2xl px-6 py-4 border-[hsl(var(--border))]">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-left font-medium">How does SwiftPay ensure compliance?</span>
+                    <ChevronDown className="h-5 w-5 text-[hsl(var(--muted-foreground))] transform transition-transform duration-200" />
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 text-[hsl(var(--muted-foreground))]">
+                  We maintain up-to-date compliance with all relevant regulations and automatically apply updates as needed.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
-
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1" className="border rounded-lg mb-4 px-4 py-2 border-gray-200">
-            <AccordionTrigger className="text-left font-medium">
-              How does SwiftPay help automate payroll?
-            </AccordionTrigger>
-            <AccordionContent>
-              SwiftPay simplifies payroll processing by automating salary calculations, tax deductions, and direct
-              deposits. Our system handles all the complex calculations, ensuring accurate and timely payments to your
-              employees.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-2" className="border rounded-lg mb-4 px-4 py-2 border-gray-200">
-            <AccordionTrigger className="text-left font-medium">
-              Can SwiftPay handle benefits management?
-            </AccordionTrigger>
-            <AccordionContent>
-              Yes, SwiftPay offers comprehensive benefits management solutions. Our platform allows you to administer
-              health insurance, retirement plans, paid time off, and other benefits seamlessly. Employees can easily
-              enroll in benefits and make changes through our user-friendly portal.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-3" className="border rounded-lg mb-4 px-4 py-2 border-gray-200">
-            <AccordionTrigger className="text-left font-medium">
-              How does SwiftPay help automate payroll?
-            </AccordionTrigger>
-            <AccordionContent>
-              SwiftPay simplifies payroll processing by automating salary calculations, tax deductions, and direct
-              deposits. Our system handles all the complex calculations, ensuring accurate and timely payments to your
-              employees.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-4" className="border rounded-lg mb-4 px-4 py-2 border-gray-200">
-            <AccordionTrigger className="text-left font-medium">
-              What customer support options are available?
-            </AccordionTrigger>
-            <AccordionContent>
-              SwiftPay provides multiple support channels including phone, email, and live chat. Our dedicated support
-              team is available during business hours to assist with any questions or issues. Premium plans include a
-              dedicated customer success manager for personalized support.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-5" className="border rounded-lg mb-4 px-4 py-2 border-gray-200">
-            <AccordionTrigger className="text-left font-medium">How does SwiftPay ensure compliance?</AccordionTrigger>
-            <AccordionContent>
-              SwiftPay stays up-to-date with changing tax laws and regulations at federal, state, and local levels. Our
-              system automatically applies the correct tax rates and filing requirements, helping your business remain
-              compliant. We also provide regular updates and notifications about regulatory changes that may affect your
-              business.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
       </div>
     </section>
   )

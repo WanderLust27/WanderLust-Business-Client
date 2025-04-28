@@ -28,7 +28,7 @@ export default function Navbar() {
         <Button variant="link" className="text-foreground/80 hover:text-foreground">
           Sign In
         </Button>
-        <Button className="bg-gradient-to-r from-blue-500 to-pink-500 hover:opacity-90 text-white rounded-full">
+        <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] hover:opacity-90 text-[hsl(var(--primary-foreground))] rounded-full">
           Get Started
         </Button>
       </div>

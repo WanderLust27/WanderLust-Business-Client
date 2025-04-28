@@ -6,35 +6,38 @@ import { ChevronDown } from "lucide-react"
 export default function SavingsCalculatorSection() {
   return (
     <section className="w-full py-24 px-6 md:px-12 lg:px-24">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
         <div className="relative">
-          <Card className="rounded-2xl overflow-hidden shadow-lg border-0 bg-gray-50 p-6">
-            <div className="flex items-center justify-between mb-4">
+          <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-background p-8">
+            <div className="flex items-center justify-between mb-6">
               <div>
-                <p className="text-sm text-gray-500">Estimated Average Total Savings:</p>
-                <div className="flex items-baseline gap-1">
-                  <h3 className="text-3xl font-bold">10.8</h3>
-                  <span className="text-green-500 font-medium">%</span>
+                <p className="text-sm text-[hsl(var(--muted-foreground))] mb-1">Estimated Average Total Savings</p>
+                <div className="flex items-baseline gap-2">
+                  <h3 className="text-4xl font-bold">10,8</h3>
+                  <Badge className="bg-[hsl(var(--success)_/_0.2)] text-[hsl(var(--success))] rounded-full text-xs px-2">+5%</Badge>
                 </div>
               </div>
-              <div className="flex items-center gap-1 px-3 py-1 bg-white rounded-md text-sm font-medium border">
-                <span>Monthly</span>
-                <ChevronDown className="h-4 w-4" />
-              </div>
+              <Button variant="outline" size="sm" className="rounded-full">
+                Monthly
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </Button>
             </div>
 
             {/* Chart */}
-            <div className="h-32 mb-8">
-              <div className="flex h-full items-end">
-                {[15, 25, 40, 30, 45, 20, 35].map((height, index) => (
-                  <div key={index} className="flex-1 mx-0.5 flex flex-col items-center">
-                    <div className="w-full bg-blue-200 rounded-sm" style={{ height: `${height}%` }}></div>
+            <div className="h-40 mb-8">
+              <div className="flex h-full items-end gap-2">
+                {[60, 80, 40, 70, 50, 90, 65].map((height, index) => (
+                  <div key={index} className="flex-1 flex flex-col items-center">
+                    <div 
+                      className="w-full bg-gradient-to-t from-[hsl(var(--primary)_/_0.1)] to-[hsl(var(--secondary)_/_0.1)] rounded-t-lg transition-all duration-300 hover:from-[hsl(var(--primary)_/_0.2)] hover:to-[hsl(var(--secondary)_/_0.2)]" 
+                      style={{ height: `${height}%` }}
+                    ></div>
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between mt-2 text-xs text-gray-500">
-                <span>Sun</span>
+              <div className="flex justify-between mt-4 text-sm text-[hsl(var(--muted-foreground))]">
                 <span>Mon</span>
+                <span>Sun</span>
                 <span>Tue</span>
                 <span>Wed</span>
                 <span>Thu</span>
@@ -43,57 +46,65 @@ export default function SavingsCalculatorSection() {
               </div>
             </div>
 
-            <div className="border-t pt-4">
-              <p className="text-sm text-gray-500 mb-2">Number Of Employees:</p>
+            <div className="border-t border-[hsl(var(--border))] pt-6">
+              <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">Number Of Employees</p>
               <div className="flex items-center justify-between">
-                <div className="relative w-32 h-32">
-                  <svg className="w-full h-full" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#f0f0f0" strokeWidth="8" strokeLinecap="round" />
+                <div className="relative w-40 h-40">
+                  <svg className="w-full h-full transform -rotate-90">
                     <circle
-                      cx="50"
-                      cy="50"
-                      r="40"
+                      cx="80"
+                      cy="80"
+                      r="60"
+                      fill="none"
+                      stroke="hsl(var(--muted))"
+                      strokeWidth="12"
+                    />
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="60"
                       fill="none"
                       stroke="url(#gradient)"
-                      strokeWidth="8"
-                      strokeDasharray="251.2"
-                      strokeDashoffset="50"
-                      strokeLinecap="round"
-                      transform="rotate(-90 50 50)"
+                      strokeWidth="12"
+                      strokeDasharray="377"
+                      strokeDashoffset="94"
+                      className="transition-all duration-500"
                     />
                     <defs>
                       <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#4f46e5" />
-                        <stop offset="100%" stopColor="#f59e0b" />
+                        <stop offset="0%" stopColor="hsl(var(--primary))" />
+                        <stop offset="100%" stopColor="hsl(var(--secondary))" />
                       </linearGradient>
                     </defs>
                   </svg>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <span className="text-2xl font-bold">1,200</span>
-                    <Badge className="bg-green-500 text-white text-xs px-1">+4%</Badge>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-3xl font-bold">1,200</span>
+                    <Badge className="bg-[hsl(var(--success)_/_0.2)] text-[hsl(var(--success))] rounded-full text-xs px-2 mt-1">+4%</Badge>
                   </div>
                 </div>
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-md">Calculate Now</Button>
+                <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] hover:opacity-90 text-[hsl(var(--primary-foreground))] rounded-full px-8 py-6 text-lg font-medium">
+                  Calculate Now
+                </Button>
               </div>
             </div>
           </Card>
         </div>
 
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            <span className="text-blue-400">Calculate </span>
-            <span className="text-gray-900">Your</span>
+        <div className="space-y-8">
+          <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+            <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Calculate </span>
+            <span className="text-foreground">Your</span>
             <br />
-            <span className="text-purple-400">Business </span>
-            <span className="text-gray-900">Savings</span>
+            <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Business </span>
+            <span className="text-foreground">Savings</span>
             <br />
-            <span className="text-pink-400">Instantly</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Instantly</span>
           </h2>
-          <p className="text-gray-600">
-            The average annual cost savings range from nothing with a DIY to $1,700 per employee per year.
+          <p className="text-[hsl(var(--muted-foreground))] text-lg">
+            The average annual cost savings from working with a PEO is $1,775 per employee in every year.
           </p>
           <div>
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 text-white rounded-full">
+            <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] hover:opacity-90 text-[hsl(var(--primary-foreground))] rounded-full px-8 py-6 text-lg font-medium">
               Learn More
             </Button>
           </div>
@@ -101,29 +112,36 @@ export default function SavingsCalculatorSection() {
       </div>
 
       {/* Customer Savings Stats */}
-      <div className="mt-24">
-        <h3 className="text-4xl font-bold mb-12">
-          <span className="text-purple-400">customers </span>
-          <span className="text-purple-500">save</span>
-          <br />
-          <span className="text-purple-600">HR costs </span>
-          <span className="text-gray-900">40%</span>
-        </h3>
+      <div className="mt-32 max-w-7xl mx-auto">
+        <div className="mb-12">
+          <h3 className="text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Customers </span>
+            <span className="text-foreground">save</span>
+          </h3>
+          <h3 className="text-5xl font-bold">
+            <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">HR </span>
+            <span className="text-foreground">costs </span>
+            <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">40%</span>
+          </h3>
+          <p className="text-[hsl(var(--muted-foreground))] text-lg mt-4">
+            With SwiftPay, businesses can save hundreds of hours by automating time-consuming HR tasks payroll.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="rounded-2xl overflow-hidden shadow-sm border-0 bg-gray-50 p-6">
-            <h4 className="text-3xl font-bold mb-4">$2.5K</h4>
-            <p className="text-gray-600 text-sm">Saved $25,000 annually on 20 hours of saved time</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-gradient-to-br from-[hsl(var(--primary)_/_0.05)] to-[hsl(var(--secondary)_/_0.05)] p-8">
+            <h4 className="text-4xl font-bold mb-4">$2.5K</h4>
+            <p className="text-[hsl(var(--muted-foreground))]">Saved $25,000 annually and 20 hours a week with Swiftpay</p>
           </Card>
 
-          <Card className="rounded-2xl overflow-hidden shadow-sm border-0 bg-gray-50 p-6">
-            <h4 className="text-3xl font-bold mb-4">$40K</h4>
-            <p className="text-gray-600 text-sm">Saved $40,000 annually with Automated Management</p>
+          <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-gradient-to-br from-[hsl(var(--primary)_/_0.05)] to-[hsl(var(--secondary)_/_0.05)] p-8">
+            <h4 className="text-4xl font-bold mb-4">$40K</h4>
+            <p className="text-[hsl(var(--muted-foreground))]">Saved $40,000 annually with Performance Management.</p>
           </Card>
 
-          <Card className="rounded-2xl overflow-hidden shadow-sm border-0 bg-gray-50 p-6">
-            <h4 className="text-3xl font-bold mb-4">20%</h4>
-            <p className="text-gray-600 text-sm">Benefits intro process into just 2 days benefits administration</p>
+          <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-gradient-to-br from-[hsl(var(--primary)_/_0.05)] to-[hsl(var(--secondary)_/_0.05)] p-8">
+            <h4 className="text-4xl font-bold mb-4">20%</h4>
+            <p className="text-[hsl(var(--muted-foreground))]">Benefits admin process into just 2 days Benefits Administration</p>
           </Card>
         </div>
       </div>
