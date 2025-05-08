@@ -5,15 +5,15 @@ import { ChevronDown } from "lucide-react"
 
 export default function SavingsCalculatorSection() {
   return (
-    <section className="w-full py-24 px-6 md:px-12 lg:px-24">
-      <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+    <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-7xl mx-auto">
         <div className="relative">
-          <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-background p-8">
+          <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-background p-4 sm:p-6 md:p-8">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <p className="text-sm text-[hsl(var(--muted-foreground))] mb-1">Estimated Average Total Savings</p>
                 <div className="flex items-baseline gap-2">
-                  <h3 className="text-4xl font-bold">10,8</h3>
+                  <h3 className="text-3xl sm:text-4xl font-bold">10,8</h3>
                   <Badge className="bg-[hsl(var(--success)_/_0.2)] text-[hsl(var(--success))] rounded-full text-xs px-2">+5%</Badge>
                 </div>
               </div>
@@ -35,7 +35,7 @@ export default function SavingsCalculatorSection() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between mt-4 text-sm text-[hsl(var(--muted-foreground))]">
+              <div className="flex justify-between mt-4 text-xs sm:text-sm text-[hsl(var(--muted-foreground))]">
                 <span>Mon</span>
                 <span>Sun</span>
                 <span>Tue</span>
@@ -82,7 +82,7 @@ export default function SavingsCalculatorSection() {
                     <Badge className="bg-[hsl(var(--success)_/_0.2)] text-[hsl(var(--success))] rounded-full text-xs px-2 mt-1">+4%</Badge>
                   </div>
                 </div>
-                <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] hover:opacity-90 text-[hsl(var(--primary-foreground))] rounded-full px-8 py-6 text-lg font-medium">
+                <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] hover:opacity-90 text-[hsl(var(--primary-foreground))] rounded-full px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-medium w-full sm:w-auto">
                   Calculate Now
                 </Button>
               </div>
@@ -91,7 +91,7 @@ export default function SavingsCalculatorSection() {
         </div>
 
         <div className="space-y-8">
-          <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Calculate </span>
             <span className="text-foreground">Your</span>
             <br />
@@ -100,7 +100,7 @@ export default function SavingsCalculatorSection() {
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Instantly</span>
           </h2>
-          <p className="text-[hsl(var(--muted-foreground))] text-lg">
+          <p className="text-[hsl(var(--muted-foreground))] text-base sm:text-lg">
             The average annual cost savings from working with a PEO is $1,775 per employee in every year.
           </p>
           <div>
@@ -112,9 +112,9 @@ export default function SavingsCalculatorSection() {
       </div>
 
       {/* Customer Savings Stats */}
-      <div className="mt-32 max-w-7xl mx-auto">
+      <div className="mt-16 sm:mt-24 md:mt-32 max-w-7xl mx-auto">
         <div className="mb-12">
-          <h3 className="text-5xl font-bold mb-4">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-transparent bg-clip-text">Customers </span>
             <span className="text-foreground">save</span>
           </h3>
@@ -128,19 +128,19 @@ export default function SavingsCalculatorSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-gradient-to-br from-[hsl(var(--primary)_/_0.05)] to-[hsl(var(--secondary)_/_0.05)] p-8">
-            <h4 className="text-4xl font-bold mb-4">$2.5K</h4>
+            <h4 className="text-3xl sm:text-4xl font-bold mb-4">$2.5K</h4>
             <p className="text-[hsl(var(--muted-foreground))]">Saved $25,000 annually and 20 hours a week with Swiftpay</p>
           </Card>
 
           <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-gradient-to-br from-[hsl(var(--primary)_/_0.05)] to-[hsl(var(--secondary)_/_0.05)] p-8">
-            <h4 className="text-4xl font-bold mb-4">$40K</h4>
+            <h4 className="text-3xl sm:text-4xl font-bold mb-4">$40K</h4>
             <p className="text-[hsl(var(--muted-foreground))]">Saved $40,000 annually with Performance Management.</p>
           </Card>
 
           <Card className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-0 bg-gradient-to-br from-[hsl(var(--primary)_/_0.05)] to-[hsl(var(--secondary)_/_0.05)] p-8">
-            <h4 className="text-4xl font-bold mb-4">20%</h4>
+            <h4 className="text-3xl sm:text-4xl font-bold mb-4">20%</h4>
             <p className="text-[hsl(var(--muted-foreground))]">Benefits admin process into just 2 days Benefits Administration</p>
           </Card>
         </div>
